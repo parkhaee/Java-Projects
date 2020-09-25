@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>List of Books in the Library</title>
+<link rel="stylesheet" type="text/css" media="all"
+href="../static/css/myCSS.css" th:href="@{css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{css/buttonCSS.css}"/>
+</head>
+<body>
+<a href="" th:href="@{/}"><img src="../image/logo.png" th:src="@{../image/logo.png}" class="logo"/></a>
+<h1>Bookstore Inventory</h1>
+<h2>Oakville</h2>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Price</th>
+		<th>Quantity</th>
+		<th>Courses</th>
+	</tr>
+	<tr th:each="oak:${oakville}">
+		<td th:text="${oak.title}"></td>
+		<td th:text="${oak.author}"></td>
+		<td th:text="${oak.price}"></td>
+		<td th:text="${oak.quantity}"></td>
+		<td th:text="${oak.courses}"></td>
+		<td><a href="" th:href="@{/edit/{id}(id=${oak.id})}"><button type="button" class="buttonChart">EDIT</button></a></td>
+		<td><a href="" th:href="@{/delete/{id}(id=${oak.id})}"><button type="button" class="buttonChart">DELETE</button></a></td>
+		<td th:if="${oak.quantity gt 0}"><a href="" th:href="@{/purchase/{id}(id=${oak.id})}"><button type="button" class="buttonChart">PURCHASE</button></a></td>
+		<td th:if="${oak.quantity == 0}"><a href="" th:href="@{/purchase/{id}(id=${oak.id})}"><button type="button" class="disabledB" disabled>PURCHASE</button></a></td>
+	</tr>
+</table>
+
+<h2>Brampton</h2>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Price</th>
+		<th>Quantity</th>
+		<th>Courses</th>
+	</tr>
+	<tr th:each="bram:${brampton}">
+		<td th:text="${bram.title}"></td>
+		<td th:text="${bram.author}"></td>
+		<td th:text="${bram.price}"></td>
+		<td th:text="${bram.quantity}"></td>
+		<td th:text="${bram.courses}"></td>
+		<td><a href="" th:href="@{/edit/{id}(id=${bram.id})}"><button type="button" class="buttonChart">EDIT</button></a></td>
+		<td><a href="" th:href="@{/delete/{id}(id=${bram.id})}"><button type="button" class="buttonChart">DELETE</button></a></td>
+		<td th:if="${bram.quantity gt 0}"><a href="" th:href="@{/purchase/{id}(id=${bram.id})}" th:name="${status}"><button type="button" class="buttonChart">PURCHASE</button></a></td>
+		<td th:if="${bram.quantity == 0}"><a href="" th:href="@{/purchase/{id}(id=${bram.id})}"><button type="button" class="disabledB" disabled>PURCHASE</button></a></td>
+	</tr>
+</table>
+
+<h2>Mississauga</h2>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Price</th>
+		<th>Quantity</th>
+		<th>Courses</th>
+	</tr>
+	<tr th:each="miss:${mississauga}">
+		<td th:text="${miss.title}"></td>
+		<td th:text="${miss.author}"></td>
+		<td th:text="${miss.price}"></td>
+		<td th:text="${miss.quantity}"></td>
+		<td th:text="${miss.courses}"></td>
+		<td><a href="" th:href="@{/edit/{id}(id=${miss.id})}"><button type="button" class="buttonChart">EDIT</button></a></td>
+		<td><a href="" th:href="@{/delete/{id}(id=${miss.id})}"><button type="button" class="buttonChart">DELETE</button></a></td>
+		<td th:if="${miss.quantity gt 0}"><a th:href="@{/purchase/{id}(id=${miss.id})}" th:name="${status}"><button type="button" class="buttonChart">PURCHASE</button></a></td>
+		<td th:if="${miss.quantity == 0}"><a href="" th:href="@{/purchase/{id}(id=${miss.id})}"><button type="button" class="disabledB" disabled>PURCHASE</button></a></td>
+	</tr>
+</table>
+
+
+</body>
+</html>

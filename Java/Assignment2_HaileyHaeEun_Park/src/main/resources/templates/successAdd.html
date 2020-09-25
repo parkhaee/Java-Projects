@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>The book has been saved!</title>
+<link rel="stylesheet" type="text/css" media="all"
+href="../static/css/myCSS.css" th:href="@{css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{css/buttonCSS.css}"/>
+</head>
+<body>
+<a href="" th:href="@{/}"><img src="../image/logo.png" th:src="@{../image/logo.png}" class="logo"/></a>
+<h1>The following book has been added successfully into the Library</h1>
+    <table>
+    <tr>
+		<th>Title</th>
+		<td th:text="${book.title}"></td>
+	</tr>
+	<tr>
+		<th>Author</th>
+		<td th:text="${book.author}"></td>
+	</tr>
+	<tr>
+		<th>Price</th>
+		<td th:text="${book.price}"></td>
+	</tr>
+	<tr>
+		<th>Quantity</th>
+		<td th:text="${book.quantity}"></td>
+	</tr>
+	<tr>
+		<th>Courses</th>
+		<td th:each="courseList:${book.courses}" th:text="${courseList}"></td>
+	</tr>
+	<tr>
+		<th>Location</th>
+		<td th:each="location:${book.locations}" th:text="${location}"></td>
+	</tr>
+	</table>
+<h2>Would you like to add more books?</h2>
+<a th:href = "@{/add}"><button class="submitB">Add More</button></a><br><br>
+<a th:href = "@{/}"><button class="cancelButton">Cancel</button></a>
+</body>
+</html>

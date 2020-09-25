@@ -1,0 +1,84 @@
+@charset "ISO-8859-1";
+.buttonHome{
+  background-color: #49d5ee;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 0 5px #888888;
+}
+
+.buttonHome:hover{
+	background-color: #008CBA;
+}
+
+.submitB{
+  background-color: #262673;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 0 5px #888888;
+}
+
+.submitB:hover{
+	background-color: #008CBA;
+}
+
+.buttonChart{
+  background-color: #262673;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 5px #888888;
+}
+
+.buttonChart:hover{
+	background-color: #008CBA;
+}
+
+.cancelButton{
+  background-color: #732626;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 5px #888888;
+}
+
+.cancelButton:hover{
+	background-color: #008CBA;
+}
+
+.disabledB{
+  background-color: #8080c0;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  box-shadow: 0 0 5px #888888;
+}

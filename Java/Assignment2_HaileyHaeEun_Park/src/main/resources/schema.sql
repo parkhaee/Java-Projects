@@ -1,0 +1,9 @@
+CREATE TABLE BOOKS (
+id INT PRIMARY KEY AUTO_INCREMENT,
+title VARCHAR(50), 
+author VARCHAR(50),
+price DOUBLE,
+quantity INT,
+courses VARCHAR(1000),
+location VARCHAR(300)
+);

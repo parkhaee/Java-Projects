@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Book(s) found!</title>
+<link rel="stylesheet" type="text/css" media="all"
+href="../static/css/myCSS.css" th:href="@{../css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{../css/buttonCSS.css}"/>
+</head>
+<body>
+<a href="" th:href="@{/}"><img src="../image/logo.png" th:src="@{../image/logo.png}" class="logo"/></a>
+<h1>The following books are found</h1>
+    <table border="1">
+	<tr>
+		<th>ID</th>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Price</th>
+		<th>Quantity</th>
+		<th>Courses</th>
+		<th>Location</th>
+	</tr>
+	<tr th:each="b:${book}">
+		<td th:text="${b.id}"></td>
+		<td th:text="${b.title}"></td>
+		<td th:text="${b.author}"></td>
+		<td th:text="${b.price}"></td>
+		<td th:text="${b.quantity}"></td>
+		<td th:text="${b.courses}"></td>
+		<td th:text="${b.location}"></td>
+		<td th:if="${b.quantity gt 0}"><a href="" th:href="@{/purchaseResult/{id}(id=${b.id})}"><button type="button" class="buttonChart">PURCHASE</button></a></td>
+		<td th:if="${b.quantity == 0}"><a href="" th:href="@{/purchaseResult/{id}(id=${b.id})}"><button type="button" class="disabledB" disabled>PURCHASE</button></a></td>
+	</tr>
+</table>
+<br>
+<a th:href = "@{/search}"><button class="submitB">Search More</button></a>
+</body>
+</html>

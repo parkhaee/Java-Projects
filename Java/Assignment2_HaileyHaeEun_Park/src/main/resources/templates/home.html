@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome to Sheridan Bookstore</title>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{css/buttonCSS.css}"/>
+</head>
+<body>
+<a href="" th:href="@{/}"><img src="../image/logo.png" th:src="@{../image/logo.png}" class="logo"/></a>
+<h1>Welcome to Sheridan Bookstore</h1>
+<div class="lower">
+<a th:href = "@{/dummy}"><button type="button" class="buttonHome">Generate Dummy Records</button></a><br><br>
+<a th:href = "@{/add}"><button type="button" class="buttonHome">Add Books</button></a><br><br>
+<a th:href = "@{/view}"><button type="button" class="buttonHome">View Book Inventory</button></a><br><br>
+<a th:href = "@{/search}"><button type="button" class="buttonHome">Search for Books</button></a><br><br>
+<a th:href = "@{/purchase}"><button type="button" class="buttonHome">Purchase Books</button></a><br><br>
+</div>
+
+</body>
+</html>

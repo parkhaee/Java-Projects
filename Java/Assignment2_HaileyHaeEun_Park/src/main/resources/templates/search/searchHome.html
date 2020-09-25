@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Books</title>
+<link rel="stylesheet" type="text/css" media="all"
+href="../static/css/myCSS.css" th:href="@{css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{css/buttonCSS.css}"/>
+</head>
+<body>
+<a href="" th:href="@{/}"><img src="../image/logo.png" th:src="@{../image/logo.png}" class="logo"/></a>
+<h1>How do you want to search a book?</h1>
+<div class="lower">
+<a th:href = "@{/searchId}"><button class="buttonHome">Search by ID</button></a>
+<a th:href = "@{/searchTitle}"><button class="buttonHome">Search by Title</button></a>
+<a th:href = "@{/searchAuthor}"><button class="buttonHome">Search by Author Name</button></a><br><br>
+<a th:href = "@{/searchCourse}"><button class="buttonHome">Search by Course</button></a>
+<a th:href = "@{/searchQuantity}"><button class="buttonHome">Search by Quantity</button></a><br><br>
+</div>
+</body>
+</html>
