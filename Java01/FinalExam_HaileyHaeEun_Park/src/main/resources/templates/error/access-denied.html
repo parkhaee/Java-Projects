@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" media="all"
+href="../static/css/mycss.css" th:href="@{css/mycss.css}"/>
+<meta charset="ISO-8859-1">
+<title>Limited Access!</title>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{css/buttonCSS.css}"/>
+</head>
+<body>
+<a href="" th:href="@{/}"><img src="../image/logo1.png" th:src="@{../image/logo1.png}" class="logo"/></a>
+<h1>You do not have permission to access this page</h1>
+Go to the <a th:href="@{/}">Main page</a>
+</body>
+</html>

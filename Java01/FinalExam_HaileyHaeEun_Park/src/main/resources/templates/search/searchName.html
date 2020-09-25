@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search by Title</title>
+<link rel="stylesheet" type="text/css" media="all"
+href="../static/css/myCSS.css" th:href="@{../css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{../css/buttonCSS.css}"/>
+</head>
+<body>
+<h1>Please enter the Name of the Toy</h1>
+<div class="lower">
+<form action="#" th:action="@{/searchByName}" th:object="${toy}">
+Toy Name: <input type="text" th:field="*{name}"/><br><br>
+<input type="submit" value="Search" class="submitB"/><br><br> 
+</form>
+<a th:href = "@{/search}"><button class="cancelButton">Cancel</button></a>
+</div>
+</body>
+</html>

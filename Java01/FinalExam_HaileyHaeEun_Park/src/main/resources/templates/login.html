@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" media="all"
+href="../static/css/myCSS.css" th:href="@{css/myCSS.css}"/>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{css/buttonCSS.css}"/>
+</head>
+<body>
+<h1>Login Page</h1>
+	<form th:action="@{/login}" method="post"> <!-- 'login' is built into spring boot application. Make sure if the input name is the correct -->
+		<div th:if="${param.error}">
+			<div class="alert">
+				Invalid username or password
+			</div>
+		</div>
+		<div th:if="${param.logout}">
+			<div class="alert">
+				You have logged out successfully
+			</div>
+		</div>
+		<div>
+			<label for="username">User's Name:</label>
+			<input type="text"								
+					id="username"
+					name="username"
+					autofocus="autofocus"
+					placeholder="Username"> <!-- Important thing about this input is the 'name='username''!! -->			
+		</div>
+		<br>
+		<div>
+			<label for="password">Password:</label>
+			<input type="password"								
+					id="password"
+					name="password"
+					placeholder="Password"> <!-- Important thing about this input is the 'name='password''!! -->			
+		</div>
+		<br>
+		<div>
+			<input type="submit"
+					name="login-submit"
+					id="login-submit"
+					value="Login"
+					class="submitB">
+		</div>
+	</form>
+	<br>
+	<a th:href="@{/registration}"/>Go Register New User</a><br><br>
+	<a th:href="@{/}"/>Go Back to Homepage</a>
+</body>
+</html>

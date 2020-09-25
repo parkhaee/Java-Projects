@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{../css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{../css/buttonCSS.css}"/>
+<meta charset="ISO-8859-1">
+<title>Register a New User</title>
+</head>
+<body>
+<h1>Registration Page</h1>
+
+	<form th:action="@{/register}" method="post">
+	<table>
+		<tr>
+			<th>
+				Username:
+			</th>
+			<td>
+				<input type="text" name="username"/>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Password:
+			</th>
+			<td>
+				<input type="password" name="password"/>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Roles:
+			</th>
+			<td>
+			   Boss <input type="checkbox" name="role1" value="boss"/><br>
+			   Worker <input type="checkbox" name="role2" value="worker"/><br>
+			</td>
+		</tr>
+		<tr>
+			<th><input type="hidden"/></th>
+			<td><input type="submit" value="Register" class="submitB"/></td>
+		</tr>
+	</table>
+</form>
+<br>
+<a th:href = "@{/login}">Log in</a><br>
+<a th:href = "@{/}">Go Back to Homepage</a><br>
+</body>
+</html>

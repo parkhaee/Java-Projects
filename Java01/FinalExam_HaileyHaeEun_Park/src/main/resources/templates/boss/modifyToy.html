@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Modify Toy</title>
+<link rel="stylesheet" type="text/css" media="all"
+href="../static/css/myCSS.css" th:href="@{../../css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{../../css/buttonCSS.css}"/>
+</head>
+<body>
+<h1>Modify Toy</h1><br>
+<div class="lower">
+<form th:action="@{/modifyToy}" method="post" th:object="${toy}">
+<input type="hidden" th:field="*{id}"/>
+	<table>
+		<tr>
+			<th>
+				Toy Name:
+			</th>
+			<td>
+				<input type="text" name="name" th:field="*{name}"/>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Price:
+			</th>
+			<td>
+				<input type="number" name="price" th:field="*{price}" step="0.01" min="0"/>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Quantity:
+			</th>
+			<td>
+				<input type="number" name="quantity" th:field="*{quantity}" step="1" min="0"/>
+			</td>
+		</tr>
+		<tr>
+			<th><input type="hidden"/></th>
+			<td><input type="submit" value="Modify" class="submitB"/></td>
+		</tr>
+	</table>
+</form>
+<a th:href = "@{/viewToys}"><button class="cancelButton">Cancel Modification</button></a>
+</div>
+</body>
+</html>

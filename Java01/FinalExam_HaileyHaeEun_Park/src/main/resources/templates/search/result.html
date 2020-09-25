@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Toy(s) found!</title>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{../css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{../css/buttonCSS.css}"/>
+</head>
+<body>
+<h1>The following toys are found</h1>
+    <table border="1">
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Quantity</th>
+	</tr>
+	<tr th:each="t:${toy}">
+		<td th:text="${t.id}"></td>
+		<td th:text="${t.name}"></td>
+		<td th:text="${t.price}"></td>
+		<td th:text="${t.quantity}"></td>
+	</tr>
+</table>
+<br>
+<a th:href = "@{/search}"><button class="submitB">Search More</button></a>
+</body>
+</html>

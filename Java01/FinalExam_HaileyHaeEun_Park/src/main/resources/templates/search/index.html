@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Toys</title>
+<link rel="stylesheet" type="text/css" media="all"
+href="../static/css/myCSS.css" th:href="@{../css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{../css/buttonCSS.css}"/>
+</head>
+<body>
+<h1>How do you want to search a toy?</h1>
+<div class="lower">
+<a th:href = "@{/searchName}"><button class="buttonHome">Search by Name</button></a>
+<a th:href = "@{/searchPrice}"><button class="buttonHome">Search by Price Range</button></a>
+<a th:href = "@{/searchQuantity}"><button class="buttonHome">Search by Quantity</button></a><br><br>
+<a th:href="@{/}"><button type="button" class="submitB">Home</button></a>
+</div>
+</body>
+</html>

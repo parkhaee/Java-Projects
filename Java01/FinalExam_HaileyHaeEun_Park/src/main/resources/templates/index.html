@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{css/buttonCSS.css}"/>
+<meta charset="ISO-8859-1">
+<title>Welcome to Toony Toy!</title>
+</head>
+<body>
+<h1>Welcome to Toony Toy Shop!</h1>
+<div sec:authorize="isAuthenticated()"> <!-- if the person is logged in... display this div -->
+	User's Name: <span sec:authentication="name"></span>
+	<br>
+	Roles: <span sec:authentication="principal.authorities"></span>
+	<br>
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Logout" class="submitB"/>
+	</form>
+</div>
+<a th:href = "@{/boss/add}"><button type="button" class="buttonHome">Add New Toy</button></a><br><br>
+<a th:href = "@{/viewToys}"><button type="button" class="buttonHome">View Toys</button></a><br><br>
+<a th:href = "@{/search}"><button type="button" class="buttonHome">Search Toys</button></a><br><br>
+</body>
+</html>

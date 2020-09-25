@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add a New Toy</title>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{../css/myCSS.css}"/>
+<link rel="stylesheet" type="text/css" media="all"
+href="" th:href="@{../css/buttonCSS.css}"/>
+</head>
+<body>
+<h1>Add New Toy</h1>
+<div sec:authorize="isAuthenticated()">
+<h2 style="text-align:center;">Please enter the Toy's detail</h2>
+	<form th:action="@{/boss/addToy}" method="post" th:object="${toy}">
+	<table>
+		<tr>
+			<th>
+				Toy Name:
+			</th>
+			<td>
+				<input type="text" name="name" th:field="*{name}"/>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Price:
+			</th>
+			<td>
+				<input type="number" name="price" th:field="*{price}" step="0.01" min="0"/>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Quantity:
+			</th>
+			<td>
+				<input type="number" name="quantity" th:field="*{quantity}" step="1" min="0"/>
+			</td>
+		</tr>
+		<tr>
+			<th><input type="hidden"/></th>
+			<td><input type="submit" value="Add" class="submitB"/></td>
+		</tr>
+	</table>
+</form>
+</div>
+<br>
+<a th:href="@{/}"><button type="button" class="submitB">Home</button></a>
+</body>
+</html>
