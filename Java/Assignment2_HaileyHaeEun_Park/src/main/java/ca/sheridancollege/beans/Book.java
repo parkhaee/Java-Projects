@@ -16,7 +16,6 @@ public class Book implements java.io.Serializable {
 	private String author;
 	private double price;
 	private int quantity;
-//	private List<Course> courses = new ArrayList<>();
 	
 	private List<String> courses = new ArrayList<>(Arrays.asList("Enterprise Java", "Computer Math", 
 			"Web Programming", "Canadian History", "Music", "Biology", "Physics", "Microeconomics",
